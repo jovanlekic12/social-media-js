@@ -12,8 +12,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #ffbebe;
-  border-bottom: 1px solid #eeadad;
+  background-color: rgb(186, 243, 186);
+  border-bottom: 1px solid #99dd99;
 }
 
 .header__picture {
@@ -25,7 +25,7 @@ header {
 .seacrh__div {
   display: flex;
   align-items: center;
-  background-color: #ff8f8f;
+  background-color: #31be31;
   padding: 0.5rem 1.5rem;
   border-radius: 2rem;
   gap: 0.5rem;
@@ -38,7 +38,7 @@ header {
 .seacrh__input {
   border: none;
   font-size: 2rem;
-  background-color: #ff8f8f;
+  background-color: #31be31;
   color: #fff;
 }
 
@@ -82,9 +82,9 @@ header {
   height: 20%;
   display: flex;
   position: relative;
-  border-bottom: 1px solid #eeadad;
-  border-left: 1px solid #eeadad;
-  border-right: 1px solid #eeadad;
+  border-bottom: 1px solid #99dd99;
+  border-left: 1px solid #99dd99;
+  border-right: 1px solid #99dd99;
   padding: 2rem 0;
 }
 
@@ -116,10 +116,11 @@ header {
 .new__post__input {
   border: none;
   font-size: 2rem;
-  background-color: #ff8f8f;
+  background-color: #31be31;
   padding: 1.2rem 2rem;
   border-radius: 2rem;
   width: 60rem;
+  color: #fff;
 }
 
 .new__post__input::placeholder {
@@ -133,9 +134,13 @@ header {
 .new__post__button {
   border: none;
   font-size: 2rem;
-  background-color: #962323;
+  background-color: #167716;
   padding: 1.2rem 2.5rem;
   border-radius: 1rem;
   color: #fff;
   cursor: pointer;
+}
+
+.main__container {
+  background-color: #31be31;
 }

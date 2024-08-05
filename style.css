@@ -2,6 +2,11 @@ html {
   font-size: 62.5%;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -44,4 +49,56 @@ header {
 
 .seacrh__input:focus {
   outline: none;
+}
+
+.user__profile {
+  height: fit-content;
+  width: 80%;
+  align-self: center;
+  font-family: sans-serif;
+}
+
+.user__cover__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user__cover {
+  height: 32rem;
+}
+
+.user__profile__photo {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  bottom: 40px;
+  left: 32px;
+  object-fit: cover;
+}
+
+.user__profile__information {
+  height: 20%;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #eeadad;
+  border-left: 1px solid #eeadad;
+  border-right: 1px solid #eeadad;
+  padding: 2rem 0;
+}
+
+.user__profile__information__div {
+  font-size: 2rem;
+  margin-left: 18rem;
+}
+
+.user__profile__username {
+  font-size: 2rem;
+  margin: 0.8rem;
+}
+
+.user__profile__adress {
+  font-size: 1.4rem;
+  margin: 0.8rem;
 }

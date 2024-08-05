@@ -17,8 +17,8 @@ header {
 }
 
 .header__picture {
-  width: 7rem;
-  height: 7rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
 }
 
@@ -65,16 +65,16 @@ header {
 }
 
 .user__cover {
-  height: 32rem;
+  height: 35rem;
 }
 
 .user__profile__photo {
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
+  height: 14rem;
+  width: 14rem;
   position: absolute;
-  bottom: 40px;
-  left: 32px;
+  bottom: 50%;
+  left: 3.2rem;
   object-fit: cover;
 }
 
@@ -89,16 +89,53 @@ header {
 }
 
 .user__profile__information__div {
-  font-size: 2rem;
   margin-left: 18rem;
 }
 
 .user__profile__username {
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0.8rem;
 }
 
 .user__profile__adress {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin: 0.8rem;
+}
+
+.new__post {
+  align-self: center;
+  margin: 3rem 0;
+}
+
+.new__post__form {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.new__post__input {
+  border: none;
+  font-size: 2rem;
+  background-color: #ff8f8f;
+  padding: 1.2rem 2rem;
+  border-radius: 2rem;
+  width: 60rem;
+}
+
+.new__post__input::placeholder {
+  color: #fff;
+}
+
+.new__post__input:focus {
+  outline: none;
+}
+
+.new__post__button {
+  border: none;
+  font-size: 2rem;
+  background-color: #962323;
+  padding: 1.2rem 2.5rem;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
 }

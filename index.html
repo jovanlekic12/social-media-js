@@ -28,14 +28,18 @@
             placeholder="Find friends"
           />
         </div>
-        <img class="header__picture" src="user.jpg" alt="404" />
+        <img class="header__picture" src="/images/user.jpg" alt="404" />
       </header>
       <section class="user__profile">
         <div class="user__cover">
-          <img class="user__cover__photo" src="user cover.jpg" alt="404" />
+          <img
+            class="user__cover__photo"
+            src="/images/user cover.jpg"
+            alt="404"
+          />
         </div>
         <div class="user__profile__information">
-          <img src="user.jpg" alt="404" class="user__profile__photo" />
+          <img src="/images/user.jpg" alt="404" class="user__profile__photo" />
           <div class="user__profile__information__div">
             <h1 class="user__profile__username">Username</h1>
             <p class="user__profile__adress">adress</p>
@@ -55,8 +59,13 @@
       </div>
       <main class="main__container">
         <aside class="friends__container">
+          <h1 class="friends__text">Friends</h1>
+          <h3 class="friends__counter">Number</h3>
           <ul class="friends__list"></ul>
         </aside>
+        <section class="posts__container">
+          <ul class="posts__list"></ul>
+        </section>
       </main>
     </div>
     <script type="module" src="/main.js"></script>

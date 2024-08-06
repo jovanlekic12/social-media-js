@@ -85,6 +85,8 @@ header {
   border-bottom: 1px solid #99dd99;
   border-left: 1px solid #99dd99;
   border-right: 1px solid #99dd99;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
   padding: 2rem 0;
 }
 
@@ -143,4 +145,7 @@ header {
 
 .main__container {
   background-color: #31be31;
+  display: flex;
+  align-items: flex-start;
+  height: fit-content;
 }

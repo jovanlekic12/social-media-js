@@ -148,4 +148,48 @@ header {
   display: flex;
   align-items: flex-start;
   height: fit-content;
+  padding-top: 2rem;
+}
+
+.friends__container {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 1rem;
+  background-color: #fff;
+  font-family: sans-serif;
+  padding: 1.5rem;
+}
+
+.friends__list {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.friend__photo {
+  height: 13rem;
+  width: 18rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+.friends__container h1 {
+  font-size: 3.5rem;
+  margin: 1rem;
+}
+
+.friends__container h3 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.friends__list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 1.3rem;
 }

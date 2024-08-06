@@ -3,6 +3,7 @@
 import "./style.css";
 import { user } from "./data.js";
 import { formatDistanceToNow } from "date-fns";
+const friendsList = document.querySelector(".friends__list");
 
 class User {
   id;
@@ -32,18 +33,17 @@ class User {
     this.friends = friends;
   }
 
-  renderFriends() {}
+  renderFriends() {
+    friendsList.innerHTML = "";
+    this.friends.forEach((friend) => {
+      const html = `<li class="friends__list__item" id="${friend.id}">
+      <img src="${friend.img}" alt="404" class="friend__photo" />
+      <h2 class="friend__username">${friend.firstName} ${friend.lastName}</h2>
+      </li>`;
+      friendsList.insertAdjacentHTML("afterbegin", html);
+    });
+  }
 }
-
-const user1 = new User(
-  user.firstName,
-  user.lastName,
-  user.img,
-  user.backgroundImg,
-  user.address,
-  user.friends,
-  user.posts
-);
 
 class Post {
   id;
@@ -81,3 +81,15 @@ class Comment {
     this.img = img;
   }
 }
+
+const user1 = new User(
+  user.firstName,
+  user.lastName,
+  user.img,
+  user.backgroundImg,
+  user.address,
+  user.friends,
+  user.posts
+);
+
+user1.renderFriends();

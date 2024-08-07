@@ -147,6 +147,7 @@ header {
   background-color: #31be31;
   display: flex;
   align-items: flex-start;
+  justify-content: space-around;
   height: fit-content;
   padding-top: 2rem;
 }
@@ -183,7 +184,7 @@ header {
 }
 
 .friends__container h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 1rem;
 }
 
@@ -191,5 +192,59 @@ header {
   display: flex;
   flex-direction: column;
   align-items: start;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+
+.posts__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.posts__list__item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-family: sans-serif;
+  max-width: 90rem;
+}
+
+.post__user__photo {
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+}
+
+.post__user__div {
+  display: flex;
+  align-items: center;
+}
+
+.post__user__infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+
+.post__user__infos h1,
+p {
+  margin: 0;
+}
+
+.post__user__infos h1 {
+  font-size: 2rem;
+}
+
+.post__user__infos p {
+  font-size: 1.5rem;
+}
+
+.post__text {
+  font-size: 2.7rem;
+  font-weight: 100;
 }

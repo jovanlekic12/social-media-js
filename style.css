@@ -248,3 +248,76 @@ p {
   font-size: 2.7rem;
   font-weight: 100;
 }
+
+.likes__comments__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.post__btn svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.post__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-radius: 2rem;
+  width: 100%;
+  font-size: 2rem;
+  margin: 1rem 0;
+  border: 1px solid #31be31;
+  transition: all 0.5s;
+}
+
+.post__btn:hover {
+  cursor: pointer;
+  background-color: #31be31;
+  transition: all 0.5s;
+}
+
+.post__buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.add__comment__div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.add__comment__input {
+  border: none;
+  font-size: 2rem;
+  background-color: #31be31;
+  padding: 1.2rem 2rem;
+  border-radius: 2rem;
+  width: 60rem;
+  color: #fff;
+}
+
+.add__comment__input::placeholder {
+  color: #fff;
+}
+
+.add__comment__input:focus {
+  outline: none;
+}
+
+.add__comment__btn {
+  border: none;
+  font-size: 2rem;
+  background-color: #167716;
+  padding: 1.2rem 2.5rem;
+  border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+}

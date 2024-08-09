@@ -6,6 +6,10 @@ import { formatDistanceToNow } from "date-fns";
 const friendsList = document.querySelector(".friends__list");
 const postsList = document.querySelector(".posts__list");
 const freindsCounter = document.querySelector(".friends__counter");
+const newPostForm = document.querySelector(".new__post__form");
+const newPostInput = document.querySelector(".new__post__input");
+
+let newPostValue;
 
 class User {
   id;
@@ -193,3 +197,14 @@ user.posts.forEach((post) => {
 });
 user1.renderPosts();
 console.log(user1);
+
+newPostForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const newPost = new Post(newPostValue, new Date());
+  user1.addPost(newPost);
+  user1.renderPosts();
+});
+
+newPostInput.addEventListener("input", function (event) {
+  newPostValue = event.target.value;
+});

@@ -7,6 +7,10 @@ html {
   flex-direction: column;
 }
 
+.active {
+  background-color: #31be31;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -150,6 +154,8 @@ header {
   justify-content: space-around;
   height: fit-content;
   padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .friends__container {

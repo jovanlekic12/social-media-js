@@ -11,6 +11,10 @@ html {
   background-color: #31be31;
 }
 
+.hide {
+  display: none;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -326,4 +330,35 @@ p {
   border-radius: 1rem;
   color: #fff;
   cursor: pointer;
+}
+
+.comment__photo {
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.comments__list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.comments__list__item {
+  display: flex;
+  align-items: center;
+}
+
+.comment__owner {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.comment__text {
+  font-size: 2rem;
+  background-color: #31be31;
+  padding: 1rem;
+  border-radius: 2rem;
 }

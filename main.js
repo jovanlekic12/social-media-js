@@ -87,6 +87,7 @@ class User {
           </svg><span>Comment</span>
         </button>
       </div>
+      <ul class="comments__list comments__list__${post.id}"></ul>
       <div class="add__comment__div">
       <img class="post__user__photo" src="${this.img}" alt="404" />
       <form class="add__comment__form">
@@ -124,6 +125,9 @@ class Post {
     this.likes.push(like);
   }
 
+  removeLike(id) {
+    this.likes = this.likes.filter((like) => like.id !== id);
+  }
   renderLikes(likeParagraph) {
     if (this.likes.length <= 0) likeParagraph.innerHTML = "";
     if (this.likes.length === 1)
@@ -137,12 +141,29 @@ class Post {
         this.likes.length - 2
       } others likes this post`;
   }
+
+  renderComments() {
+    const commentsList = document.querySelector(`.comments__list__${this.id}`);
+    commentsList.innerHTML = "";
+    this.comments.forEach((comment) => {
+      const html = `<li class="comments__list__item">
+                      <img src="${comment.img}" class="comment__photo">
+                      <div class="comment__info">
+                        <p class="comment__owner">${comment.firstName} ${comment.lastName}</p>
+                        <p class="comment__text">${comment.commentText}</p>
+                      </div>
+                    </li>`;
+      commentsList.insertAdjacentHTML("afterbegin", html);
+    });
+  }
 }
 
 class Like {
+  id;
   firstName;
   lastName;
-  constructor(firstName, lastName) {
+  constructor(id, firstName, lastName) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
   }
@@ -189,22 +210,62 @@ user.posts.forEach((post) => {
     newPost.addComment(newComment);
   });
   post.likes.forEach((like) => {
-    const newLike = new Like(like.firstName, like.lastName);
+    const newLike = new Like(post.id, like.firstName, like.lastName);
     newPost.addLike(newLike);
   });
 
   user1.addPost(newPost);
 });
+
 user1.renderPosts();
+user1.posts.forEach((post) => post.renderComments());
 console.log(user1);
 
 newPostForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const newPost = new Post(newPostValue, new Date());
+  newPostInput.value = "";
   user1.addPost(newPost);
   user1.renderPosts();
 });
 
 newPostInput.addEventListener("input", function (event) {
   newPostValue = event.target.value;
+});
+
+postsList.addEventListener("click", function (event) {
+  if (event.target.classList.contains("comments__p")) {
+    console.log("mjau");
+    const li = event.target.closest("li");
+    const id = li.id;
+    const list = document.querySelector(`comments__list__${id}`);
+    console.log(li);
+  }
+
+  if (event.target.classList.contains("btn__like")) {
+    const li = event.target.closest("li");
+    const id = li.id;
+    const currentPost = user1.posts.find((post) => post.id === id);
+
+    //adding like
+    if (!currentPost.likes.find((like) => like.id === id)) {
+      currentPost.addLike(new Like(id, user1.firstName, user1.lastName));
+      const likeParagraph = document.querySelector(
+        `.likes__p__${currentPost.id}`
+      );
+      currentPost.renderLikes(likeParagraph);
+      event.target.classList.add("active");
+      return;
+
+      //removing like
+    } else if (currentPost.likes.find((like) => like.id === id)) {
+      currentPost.removeLike(id);
+      const likeParagraph = document.querySelector(
+        `.likes__p__${currentPost.id}`
+      );
+      currentPost.renderLikes(likeParagraph);
+      event.target.classList.remove("active");
+      return;
+    }
+  }
 });

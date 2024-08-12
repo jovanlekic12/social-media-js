@@ -243,7 +243,7 @@ postsList.addEventListener("click", function (event) {
     const currentPost = user1.posts.find((post) => post.id === id);
     const form = event.target.closest("form");
     const input = event.target.closest("input");
-    // const commentCounter = document.querySelector(`.comments__p__${id}`);
+    const commentCounter = document.querySelector(`.comments__p__${id}`);
     const list = document.querySelector(`.comments__list__${id}`);
     input.addEventListener("input", function () {
       commentValue = input.value;
@@ -255,7 +255,7 @@ postsList.addEventListener("click", function (event) {
       );
       input.value = "";
       currentPost.renderComments();
-      // commentCounter.textContent = `${currentPost.comments.length} comments`;
+      commentCounter.textContent = `${currentPost.comments.length} comments`;
       list.classList.remove("hide");
       console.log(currentPost);
     });

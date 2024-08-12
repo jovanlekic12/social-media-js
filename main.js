@@ -8,9 +8,10 @@ const postsList = document.querySelector(".posts__list");
 const freindsCounter = document.querySelector(".friends__counter");
 const newPostForm = document.querySelector(".new__post__form");
 const newPostInput = document.querySelector(".new__post__input");
-
+const search = document.querySelector(".search__input");
+const findFriendsList = document.querySelector(".find__friends__list");
 let newPostValue;
-
+let commentValue;
 class User {
   id;
   firstName;
@@ -67,15 +68,11 @@ class User {
       <h1 class="post__text">${post.postText}</h1>
 
       <div class="likes__comments__div">
-        <div class="likes__container">
           <p class="likes__p likes__p__${post.id}"></p>
-        </div>
 
-        <div class="comments__container">
           <p class="comments__p comments__p__${post.id}">${
         post.comments.length
       } comments</p>
-        </div>
       </div>
       <div class="post__buttons">
         <button class="post__btn btn__like"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -87,7 +84,7 @@ class User {
           </svg><span>Comment</span>
         </button>
       </div>
-      <ul class="comments__list comments__list__${post.id}"></ul>
+      <ul class="comments__list comments__list__${post.id} hide"></ul>
       <div class="add__comment__div">
       <img class="post__user__photo" src="${this.img}" alt="404" />
       <form class="add__comment__form">
@@ -234,12 +231,39 @@ newPostInput.addEventListener("input", function (event) {
 });
 
 postsList.addEventListener("click", function (event) {
+  //coment add
+  if (event.target.classList.contains("add__comment__input")) {
+    const li = event.target.closest("li");
+    const id = li.id;
+    const currentPost = user1.posts.find((post) => post.id === id);
+    const form = event.target.closest("form");
+    const input = event.target.closest("input");
+    const commentCounter = document.querySelector(`.comments__p__${id}`);
+    const list = document.querySelector(`.comments__list__${id}`);
+    input.addEventListener("input", function () {
+      commentValue = input.value;
+    });
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      currentPost.addComment(
+        new Comment(user1.firstName, user1.lastName, commentValue, user1.img)
+      );
+      input.value = "";
+      currentPost.renderComments();
+      commentCounter.textContent = `${currentPost.comments.length} comments`;
+      list.classList.remove("hide");
+      console.log(currentPost);
+    });
+  }
   if (event.target.classList.contains("comments__p")) {
+    //coments list
     console.log("mjau");
     const li = event.target.closest("li");
     const id = li.id;
-    const list = document.querySelector(`comments__list__${id}`);
-    console.log(li);
+    const list = document.querySelector(`.comments__list__${id}`);
+    list.classList.contains("hide")
+      ? list.classList.remove("hide")
+      : list.classList.add("hide");
   }
 
   if (event.target.classList.contains("btn__like")) {
@@ -268,4 +292,23 @@ postsList.addEventListener("click", function (event) {
       return;
     }
   }
+});
+
+search.addEventListener("keyup", function (event) {
+  if (event.target.value.length > 0) {
+    const searched = user1.friends.filter(
+      (friend) =>
+        friend.firstName.toLowerCase().includes(event.target.value) ||
+        friend.lastName.toLowerCase().includes(event.target.value)
+    );
+    findFriendsList.classList.remove("hide");
+    findFriendsList.innerHTML = "";
+    searched.forEach((friend) => {
+      const html = `<li class="find__friends__list__item">
+                      <img src=${friend.img} class="find__friends__photo">
+                      <p class="find__friends__name">${friend.firstName} ${friend.lastName}</p>
+                    </li>`;
+      findFriendsList.insertAdjacentHTML("afterbegin", html);
+    });
+  } else findFriendsList.classList.add("hide");
 });

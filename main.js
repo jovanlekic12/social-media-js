@@ -12,6 +12,12 @@ const search = document.querySelector(".search__input");
 const findFriendsList = document.querySelector(".find__friends__list");
 let newPostValue;
 let commentValue;
+
+window.addEventListener("load", function () {
+  const loader = this.document.querySelector(".loader");
+  loader.classList.add("loader-hidden");
+});
+
 class User {
   id;
   firstName;
@@ -231,14 +237,13 @@ newPostInput.addEventListener("input", function (event) {
 });
 
 postsList.addEventListener("click", function (event) {
-  //coment add
   if (event.target.classList.contains("add__comment__input")) {
     const li = event.target.closest("li");
     const id = li.id;
     const currentPost = user1.posts.find((post) => post.id === id);
     const form = event.target.closest("form");
     const input = event.target.closest("input");
-    const commentCounter = document.querySelector(`.comments__p__${id}`);
+    // const commentCounter = document.querySelector(`.comments__p__${id}`);
     const list = document.querySelector(`.comments__list__${id}`);
     input.addEventListener("input", function () {
       commentValue = input.value;
@@ -250,20 +255,21 @@ postsList.addEventListener("click", function (event) {
       );
       input.value = "";
       currentPost.renderComments();
-      commentCounter.textContent = `${currentPost.comments.length} comments`;
+      // commentCounter.textContent = `${currentPost.comments.length} comments`;
       list.classList.remove("hide");
       console.log(currentPost);
     });
+    return;
   }
   if (event.target.classList.contains("comments__p")) {
     //coments list
-    console.log("mjau");
     const li = event.target.closest("li");
     const id = li.id;
     const list = document.querySelector(`.comments__list__${id}`);
     list.classList.contains("hide")
       ? list.classList.remove("hide")
       : list.classList.add("hide");
+    return;
   }
 
   if (event.target.classList.contains("btn__like")) {
@@ -294,12 +300,17 @@ postsList.addEventListener("click", function (event) {
   }
 });
 
-search.addEventListener("keyup", function (event) {
+search.addEventListener("input", function (event) {
   if (event.target.value.length > 0) {
     const searched = user1.friends.filter(
       (friend) =>
         friend.firstName.toLowerCase().includes(event.target.value) ||
-        friend.lastName.toLowerCase().includes(event.target.value)
+        friend.lastName.toLowerCase().includes(event.target.value) ||
+        (
+          friend.firstName.toLowerCase() +
+          " " +
+          friend.lastName.toLowerCase()
+        ).includes(event.target.value)
     );
     findFriendsList.classList.remove("hide");
     findFriendsList.innerHTML = "";

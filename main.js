@@ -236,30 +236,38 @@ newPostInput.addEventListener("input", function (event) {
   newPostValue = event.target.value;
 });
 
+let form;
+function addComment(event, post, commentCounter, list, input) {
+  event.preventDefault();
+  console.log("123");
+  post.addComment(
+    new Comment(user1.firstName, user1.lastName, commentValue, user1.img)
+  );
+  input.value = "";
+  post.renderComments();
+  commentCounter.textContent = `${post.comments.length} comments`;
+  list.classList.remove("hide");
+  console.log(post);
+}
 postsList.addEventListener("click", function (event) {
+  if (form) {
+    form.removeEventListener("submit", addComment);
+  }
   if (event.target.classList.contains("add__comment__input")) {
     const li = event.target.closest("li");
     const id = li.id;
     const currentPost = user1.posts.find((post) => post.id === id);
-    const form = event.target.closest("form");
+    form = event.target.closest("form");
     const input = event.target.closest("input");
     const commentCounter = document.querySelector(`.comments__p__${id}`);
     const list = document.querySelector(`.comments__list__${id}`);
     input.addEventListener("input", function () {
       commentValue = input.value;
     });
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      currentPost.addComment(
-        new Comment(user1.firstName, user1.lastName, commentValue, user1.img)
-      );
-      input.value = "";
-      currentPost.renderComments();
-      commentCounter.textContent = `${currentPost.comments.length} comments`;
-      list.classList.remove("hide");
-      console.log(currentPost);
-    });
-    return;
+
+    form.addEventListener("submit", (event) =>
+      addComment(event, currentPost, commentCounter, list, input)
+    );
   }
   if (event.target.classList.contains("comments__p")) {
     //coments list

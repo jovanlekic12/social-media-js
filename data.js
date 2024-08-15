@@ -70,24 +70,48 @@ export const user = {
       ],
       comments: [
         {
+          id: crypto.randomUUID(),
           firstName: "Gordana",
           lastName: "Stouns",
           commentText:
             "Wow, this is so profound and inspiring! Couldn't agree more.",
           img: "/images/profile1.jpg",
+          likes: [
+            {
+              firstName: "Marc",
+              lastName: "Anderson",
+            },
+            {
+              firstName: "Hiroshi",
+              lastName: "Tanaka",
+            },
+            {
+              firstName: "Ethan",
+              lastName: "Turner",
+            },
+          ],
         },
         {
+          id: crypto.randomUUID(),
           firstName: "Marc",
           lastName: "Anderson",
           commentText: "Absolutely love this quote!",
           img: "/images/profile6.jpg",
+          likes: [
+            {
+              firstName: "Hiroshi",
+              lastName: "Tanaka",
+            },
+          ],
         },
         {
+          id: crypto.randomUUID(),
           firstName: "Hiroshi",
           lastName: "Tanaka",
           commentText:
             "Sometimes, it's the small gestures that make someone a hero",
           img: "/images/profile2.jpg",
+          likes: [],
         },
       ],
     },
@@ -116,32 +140,67 @@ export const user = {
       ],
       comments: [
         {
+          id: crypto.randomUUID(),
           firstName: "Gordana",
           lastName: "Stouns",
           commentText:
             "Sometimes the choices we face are so tough, it's almost like navigating through shades of gray.",
           img: "/images/profile1.jpg",
+          likes: [
+            {
+              firstName: "Marc",
+              lastName: "Anderson",
+            },
+          ],
         },
         {
+          id: crypto.randomUUID(),
           firstName: "Marc",
           lastName: "Anderson",
           commentText:
             " Choosing between evils can be a dilemma, but your stance adds a layer of wisdom to it. ",
           img: "/images/profile6.jpg",
+          likes: [
+            {
+              firstName: "Gordana",
+              lastName: "Stouns",
+            },
+            {
+              firstName: "Ethan",
+              lastName: "Turner",
+            },
+          ],
         },
         {
+          id: crypto.randomUUID(),
           firstName: "Ethan",
           lastName: "Turner",
           commentText:
             " It's a reminder that sometimes the best option is to stay true to your principles, even if the choices seem challenging.",
           img: "/images/profile5.jpg",
+          likes: [],
         },
         {
+          id: crypto.randomUUID(),
           firstName: "Majda",
           lastName: "Odzaklijevska",
           commentText:
             "Makes me ponder on the importance of staying true to one's moral compass. ",
           img: "/images/profile4.jpg",
+          likes: [
+            {
+              firstName: "Gordana",
+              lastName: "Stouns",
+            },
+            {
+              firstName: "Ethan",
+              lastName: "Turner",
+            },
+            {
+              firstName: "Marc",
+              lastName: "Anderson",
+            },
+          ],
         },
       ],
     },

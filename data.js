@@ -3,7 +3,7 @@ export const user = {
   firstName: "Jovan",
   lastName: "Lekic",
   img: "./images/user.jpg",
-  backgroundImg: "/images/user cover.jpg",
+  backgroundImg: "./images/user cover.jpg",
   address: {
     country: "Montenegro",
     city: "Podgorica",
@@ -18,37 +18,37 @@ export const user = {
       id: crypto.randomUUID(),
       firstName: "Gordana",
       lastName: "Stouns",
-      img: "/images/profile1.jpg",
+      img: "./images/profile1.jpg",
     },
     {
       id: crypto.randomUUID(),
       firstName: "Hiroshi",
       lastName: "Tanaka",
-      img: "/images/profile2.jpg",
+      img: "./images/profile2.jpg",
     },
     {
       id: crypto.randomUUID(),
       firstName: "Kilibarda",
       lastName: "Petrovska",
-      img: "/images/profile3.jpg",
+      img: "./images/profile3.jpg",
     },
     {
       id: crypto.randomUUID(),
       firstName: "Majda",
       lastName: "Odzaklijevska",
-      img: "/images/profile4.jpg",
+      img: "./images/profile4.jpg",
     },
     {
       id: crypto.randomUUID(),
       firstName: "Ethan",
       lastName: "Turner",
-      img: "/images/profile5.jpg",
+      img: "./images/profile5.jpg",
     },
     {
       id: crypto.randomUUID(),
       firstName: "Marc",
       lastName: "Anderson",
-      img: "/images/profile6.jpg",
+      img: "./images/profile6.jpg",
     },
   ],
 
@@ -75,7 +75,7 @@ export const user = {
           lastName: "Stouns",
           commentText:
             "Wow, this is so profound and inspiring! Couldn't agree more.",
-          img: "/images/profile1.jpg",
+          img: "./images/profile1.jpg",
           likes: [
             {
               firstName: "Marc",
@@ -96,7 +96,7 @@ export const user = {
           firstName: "Marc",
           lastName: "Anderson",
           commentText: "Absolutely love this quote!",
-          img: "/images/profile6.jpg",
+          img: "./images/profile6.jpg",
           likes: [
             {
               firstName: "Hiroshi",
@@ -110,7 +110,7 @@ export const user = {
           lastName: "Tanaka",
           commentText:
             "Sometimes, it's the small gestures that make someone a hero",
-          img: "/images/profile2.jpg",
+          img: "./images/profile2.jpg",
           likes: [],
         },
       ],
@@ -159,7 +159,7 @@ export const user = {
           lastName: "Anderson",
           commentText:
             " Choosing between evils can be a dilemma, but your stance adds a layer of wisdom to it. ",
-          img: "/images/profile6.jpg",
+          img: "./images/profile6.jpg",
           likes: [
             {
               firstName: "Gordana",
@@ -177,7 +177,7 @@ export const user = {
           lastName: "Turner",
           commentText:
             " It's a reminder that sometimes the best option is to stay true to your principles, even if the choices seem challenging.",
-          img: "/images/profile5.jpg",
+          img: "./images/profile5.jpg",
           likes: [],
         },
         {
@@ -186,7 +186,7 @@ export const user = {
           lastName: "Odzaklijevska",
           commentText:
             "Makes me ponder on the importance of staying true to one's moral compass. ",
-          img: "/images/profile4.jpg",
+          img: "./images/profile4.jpg",
           likes: [
             {
               firstName: "Gordana",

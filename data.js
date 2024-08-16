@@ -2,7 +2,7 @@ export const user = {
   id: crypto.randomUUID(),
   firstName: "Jovan",
   lastName: "Lekic",
-  img: "/images/user.jpg",
+  img: "./images/user.jpg",
   backgroundImg: "/images/user cover.jpg",
   address: {
     country: "Montenegro",
@@ -145,7 +145,7 @@ export const user = {
           lastName: "Stouns",
           commentText:
             "Sometimes the choices we face are so tough, it's almost like navigating through shades of gray.",
-          img: "/images/profile1.jpg",
+          img: "./images/profile1.jpg",
           likes: [
             {
               firstName: "Marc",

@@ -264,10 +264,11 @@ user1.posts.forEach((post) => post.renderComments());
 console.log(user1);
 newPostForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const newPost = new Post(newPostValue, new Date());
-  newPostInput.value = "";
-  user1.addPost(newPost);
+  user1.addPost(new Post(newPostValue, new Date()));
   user1.renderPosts();
+  user1.posts.forEach((post) => post.renderComments());
+  newPostInput.value = "";
+  console.log(user1);
 });
 
 newPostInput.addEventListener("input", function (event) {

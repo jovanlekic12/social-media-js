@@ -18,7 +18,7 @@ export const user = {
       id: crypto.randomUUID(),
       firstName: "Gordana",
       lastName: "Stouns",
-      img: "./images/profile1.jpg",
+      img: "/images/profile1.jpg",
     },
     {
       id: crypto.randomUUID(),

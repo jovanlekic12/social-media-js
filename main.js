@@ -385,7 +385,7 @@ search.addEventListener("input", function (event) {
     findFriendsList.innerHTML = "";
     searched.forEach((friend) => {
       const html = `<li class="find__friends__list__item">
-                      <img src=${friend.img} class="find__friends__photo">
+                      <img src="${friend.img}" class="find__friends__photo">
                       <p class="find__friends__name">${friend.firstName} ${friend.lastName}</p>
                     </li>`;
       findFriendsList.insertAdjacentHTML("afterbegin", html);
